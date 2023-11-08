@@ -1,4 +1,3 @@
-import yargs from "yargs";
 import { program } from "commander";
 import * as contactService from "./contacts.js";
 
@@ -21,9 +20,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-// const { argv } = yargs(process.argv.slice(2));
-// invokeAction(argv);
-
 program
   .option("-a, --action <type>")
   .option("-i, --id <type>")
@@ -34,13 +30,3 @@ program.parse();
 
 const options = program.opts();
 invokeAction(options);
-
-// invokeAction({ action: "get", id: "drsAJ4SHPYqZeG-83QTVW" });
-// invokeAction({
-//   action: "add",
-//   name: "Jamie Vardy",
-//   email: "j.vardy@mail.com",
-//   phone: "(568) 458-63-56",
-// });
-
-// invokeAction({ action: "remove", id: "V4_zZG_EdwMzXKMf3Mlel" });
